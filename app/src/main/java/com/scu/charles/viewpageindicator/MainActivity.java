@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.scu.charles.viewpageindicator.adater.RhythmAdapter;
 import com.scu.charles.viewpageindicator.adater.StatePageAdapter;
@@ -72,8 +73,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //注意参数必须是对象，所以不能直接用int,要使用Integer
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEventReceive(int mCurrentPosition){
+    public void onEventReceive(Integer mCurrentPosition){
+        Log.i("mesage",mCurrentPosition+"ffffff");
         mViewPager.setCurrentItem(mCurrentPosition,true);
     }
 

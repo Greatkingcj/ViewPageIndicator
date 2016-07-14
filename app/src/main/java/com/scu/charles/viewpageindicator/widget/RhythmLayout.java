@@ -269,7 +269,9 @@ public class RhythmLayout extends HorizontalScrollView{
                 }
             }
         },200L);
+        System.out.print(mCurrentItemPosition+""+getChildCount());
         EventBus.getDefault().post(mCurrentItemPosition);
+        mCurrentItemPosition = -1;
     }
 
     public int getSize() {
